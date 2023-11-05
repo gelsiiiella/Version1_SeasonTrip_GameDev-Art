@@ -1,0 +1,229 @@
+[gd_scene load_steps=7 format=3 uid="uid://btf4m4ox83k1v"]
+
+[ext_resource type="Texture2D" uid="uid://m6c27t8b42jc" path="res://drivers_bg.png" id="1_cs1ns"]
+[ext_resource type="Script" path="res://educ_part/drivers_section.gd" id="1_owqel"]
+[ext_resource type="Texture2D" uid="uid://cbsjkfmd8ea6d" path="res://Pixel Buttons/Previous_Idle.png" id="2_215g8"]
+[ext_resource type="Texture2D" uid="uid://3buji45wii8j" path="res://Pixel Buttons/Previous_Pushed.png" id="3_04aea"]
+[ext_resource type="Texture2D" uid="uid://bugqqb4rewsca" path="res://Pixel Buttons/Next_Idle.png" id="4_gxy4d"]
+[ext_resource type="Texture2D" uid="uid://bkur2w1rs0b5e" path="res://Pixel Buttons/Next_Pushed.png" id="5_epa8t"]
+
+[node name="drivers_section" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_owqel")
+
+[node name="drivers_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1176.0
+offset_bottom = 638.0
+texture = ExtResource("1_cs1ns")
+expand_mode = 1
+
+[node name="previous" type="TextureButton" parent="drivers_bg"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.054
+anchor_bottom = 0.536
+offset_left = 42.0
+offset_top = 529.0
+offset_right = 42.496
+offset_bottom = 397.032
+texture_normal = ExtResource("2_215g8")
+texture_pressed = ExtResource("3_04aea")
+
+[node name="next" type="TextureButton" parent="drivers_bg"]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 523.0
+offset_right = 1049.0
+offset_bottom = 587.0
+texture_normal = ExtResource("4_gxy4d")
+texture_pressed = ExtResource("5_epa8t")
+
+[node name="student" type="Label" parent="drivers_bg"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 31.0
+offset_right = 184.0
+offset_bottom = 57.0
+text = "Student Permit
+"
+
+[node name="Label" type="Label" parent="drivers_bg/student"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 77.0
+offset_right = 1687.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "An 18-year-old who is in good bodily "
+
+[node name="Label2" type="Label" parent="drivers_bg/student"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 92.0
+offset_right = 1652.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "and mental health can apply for a driver's 
+"
+
+[node name="Label3" type="Label" parent="drivers_bg/student"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 111.0
+offset_right = 1655.0
+offset_bottom = 137.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "license by presenting a notarized letter, 
+"
+
+[node name="Label4" type="Label" parent="drivers_bg/student"]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 129.0
+offset_right = 1649.0
+offset_bottom = 155.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " identification. Student permit gives "
+
+[node name="Label5" type="Label" parent="drivers_bg/student"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 145.0
+offset_right = 1656.0
+offset_bottom = 171.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "permission to acquire driving skills."
+
+[node name="non_professional" type="Label" parent="."]
+layout_mode = 0
+offset_left = 706.0
+offset_top = 84.0
+offset_right = 960.0
+offset_bottom = 110.0
+text = "Non-Professional Driver's License"
+
+[node name="Label5" type="Label" parent="non_professional"]
+layout_mode = 0
+offset_left = -84.0
+offset_top = 158.0
+offset_right = 1363.0
+offset_bottom = 184.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "certificate, and a negative drug test."
+
+[node name="Label2" type="Label" parent="non_professional"]
+layout_mode = 0
+offset_left = -72.0
+offset_top = 92.0
+offset_right = 1375.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "individuals driving private vehicles "
+
+[node name="Label" type="Label" parent="non_professional"]
+layout_mode = 0
+offset_left = -63.0
+offset_top = 70.0
+offset_right = 1384.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "A perfect license is required for "
+
+[node name="Label4" type="Label" parent="non_professional"]
+layout_mode = 0
+offset_left = -92.0
+offset_top = 134.0
+offset_right = 1355.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "exam, a valid student permit, a medical"
+
+[node name="Label3" type="Label" parent="non_professional"]
+layout_mode = 0
+offset_left = -111.0
+offset_top = 114.0
+offset_right = 1336.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "weighing 4500 kg or less, requiring a written "
+
+[node name="professional" type="Label" parent="."]
+layout_mode = 0
+offset_left = 274.0
+offset_top = 305.0
+offset_right = 495.0
+offset_bottom = 331.0
+text = "Professional Driver's License
+"
+
+[node name="Label7" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -38.0
+offset_top = 188.0
+offset_right = 1409.0
+offset_bottom = 214.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "and pass 45 out of 60 random questions.  "
+
+[node name="Label6" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -39.0
+offset_top = 170.0
+offset_right = 1408.0
+offset_bottom = 196.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "be in possession of a medical certificate, "
+
+[node name="Label5" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 148.0
+offset_right = 1402.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "old, have a clean record from drug tests, "
+
+[node name="Label4" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -50.0
+offset_top = 130.0
+offset_right = 1397.0
+offset_bottom = 156.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "an applicant must be at least eighteen years "
+
+[node name="Label3" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 110.0
+offset_right = 1402.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "vehicles .In order to obtain this license, "
+
+[node name="Label2" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -45.0
+offset_top = 90.0
+offset_right = 1402.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "construction, public utility, or commercial "
+
+[node name="Label" type="Label" parent="professional"]
+layout_mode = 0
+offset_left = -33.0
+offset_top = 70.0
+offset_right = 1414.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "This license is for operating heavy "
+
+[connection signal="pressed" from="drivers_bg/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="drivers_bg/next" to="." method="_on_next_pressed"]

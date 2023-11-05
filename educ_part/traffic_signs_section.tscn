@@ -1,0 +1,278 @@
+[gd_scene load_steps=12 format=3 uid="uid://7s46trs27r2o"]
+
+[ext_resource type="Script" path="res://educ_part/traffic_signs_section.gd" id="1_44n3x"]
+[ext_resource type="Texture2D" uid="uid://cfq3wbdd7yqlh" path="res://traffic_signs_bg.png" id="1_ijmcv"]
+[ext_resource type="Texture2D" uid="uid://cbsjkfmd8ea6d" path="res://Pixel Buttons/Previous_Idle.png" id="2_0e73r"]
+[ext_resource type="Texture2D" uid="uid://3buji45wii8j" path="res://Pixel Buttons/Previous_Pushed.png" id="3_o5lgi"]
+[ext_resource type="Texture2D" uid="uid://bugqqb4rewsca" path="res://Pixel Buttons/Next_Idle.png" id="4_igh4c"]
+[ext_resource type="Texture2D" uid="uid://bkur2w1rs0b5e" path="res://Pixel Buttons/Next_Pushed.png" id="5_faric"]
+[ext_resource type="Texture2D" uid="uid://c0q23syt60x8p" path="res://general/6.png" id="6_8ethw"]
+[ext_resource type="Texture2D" uid="uid://lsgwn2eqawof" path="res://general/7.png" id="7_np2j2"]
+[ext_resource type="Texture2D" uid="uid://dbaqtpkqejr0h" path="res://general/8.png" id="8_bv0en"]
+[ext_resource type="Texture2D" uid="uid://btkn2ioj3tsx" path="res://general/9.png" id="9_7k2h1"]
+[ext_resource type="Texture2D" uid="uid://bifbbnptcchhi" path="res://general/10.png" id="10_gbog7"]
+
+[node name="traffic_signs_section" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44n3x")
+
+[node name="traffic_signs_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 690.0
+texture = ExtResource("1_ijmcv")
+expand_mode = 1
+
+[node name="previous" type="TextureButton" parent="traffic_signs_bg"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.025
+anchor_bottom = 0.235
+offset_left = 62.0
+offset_top = 510.0
+offset_right = 94.0
+offset_bottom = 411.85
+texture_normal = ExtResource("2_0e73r")
+texture_pressed = ExtResource("3_o5lgi")
+
+[node name="next" type="TextureButton" parent="traffic_signs_bg"]
+layout_mode = 0
+offset_left = 915.0
+offset_top = 512.0
+offset_right = 979.0
+offset_bottom = 676.0
+texture_normal = ExtResource("4_igh4c")
+texture_pressed = ExtResource("5_faric")
+
+[node name="direction_signs" type="Label" parent="."]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 36.0
+offset_right = 265.0
+offset_bottom = 62.0
+text = "Direction Signs
+"
+
+[node name="Label2" type="Label" parent="direction_signs"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 177.0
+offset_right = 900.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "traffic signals, typically "
+
+[node name="Label" type="Label" parent="direction_signs"]
+layout_mode = 0
+offset_left = -58.0
+offset_top = 162.0
+offset_right = 899.0
+offset_bottom = 188.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Direction signs are mandatory"
+
+[node name="Label3" type="Label" parent="direction_signs"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = 194.0
+offset_right = 897.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "displayed in white arrows over a"
+
+[node name="Label4" type="Label" parent="direction_signs"]
+layout_mode = 0
+offset_left = -57.0
+offset_top = 210.0
+offset_right = 900.0
+offset_bottom = 236.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "blue circle in a rectangle with a "
+
+[node name="Label5" type="Label" parent="direction_signs"]
+layout_mode = 0
+offset_left = -64.0
+offset_top = 226.0
+offset_right = 893.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "label."
+
+[node name="prohibitive" type="Label" parent="."]
+layout_mode = 0
+offset_left = 427.0
+offset_top = 36.0
+offset_right = 644.0
+offset_bottom = 62.0
+text = "Prohibitive/Restrictive Signs
+"
+
+[node name="Label2" type="Label" parent="prohibitive"]
+layout_mode = 0
+offset_left = -11.0
+offset_top = 179.0
+offset_right = 897.0
+offset_bottom = 205.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "on specific roads, easily"
+
+[node name="Label" type="Label" parent="prohibitive"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 161.0
+offset_right = 945.0
+offset_bottom = 187.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Signs indicate restricted areas "
+
+[node name="Label4" type="Label" parent="prohibitive"]
+layout_mode = 0
+offset_left = -14.0
+offset_top = 195.0
+offset_right = 943.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " identifiable by the slash symbol. "
+
+[node name="priority" type="Label" parent="."]
+layout_mode = 0
+offset_left = 826.0
+offset_top = 32.0
+offset_right = 1043.0
+offset_bottom = 58.0
+text = "Priority Signs
+"
+
+[node name="Label4" type="Label" parent="priority"]
+layout_mode = 0
+offset_left = -69.0
+offset_top = 199.0
+offset_right = 888.0
+offset_bottom = 225.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "indicated by priority traffic signals. "
+
+[node name="Label2" type="Label" parent="priority"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = 183.0
+offset_right = 842.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "should pass intersections is "
+
+[node name="Label" type="Label" parent="priority"]
+layout_mode = 0
+offset_left = -71.0
+offset_top = 165.0
+offset_right = 886.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "The order in which vehicles "
+
+[node name="speed limit" type="Label" parent="."]
+layout_mode = 0
+offset_left = 284.0
+offset_top = 326.0
+offset_right = 501.0
+offset_bottom = 352.0
+text = "Speed Limit
+"
+
+[node name="Label2" type="Label" parent="speed limit"]
+layout_mode = 0
+offset_left = -66.0
+offset_top = 183.0
+offset_right = 842.0
+offset_bottom = 209.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "on a specific road stretch."
+
+[node name="Label" type="Label" parent="speed limit"]
+layout_mode = 0
+offset_left = -71.0
+offset_top = 165.0
+offset_right = 886.0
+offset_bottom = 191.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Drivers are allowed to maintain "
+
+[node name="parking" type="Label" parent="."]
+layout_mode = 0
+offset_left = 618.0
+offset_top = 325.0
+offset_right = 835.0
+offset_bottom = 351.0
+text = "Parking and Stopping Sign
+"
+
+[node name="Label" type="Label" parent="parking"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 169.0
+offset_right = 948.0
+offset_bottom = 195.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Zones designated for loading "
+
+[node name="Label2" type="Label" parent="parking"]
+layout_mode = 0
+offset_left = -13.0
+offset_top = 185.0
+offset_right = 895.0
+offset_bottom = 211.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "and parking at specific times "
+
+[node name="direction" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 68.0
+offset_right = 268.0
+offset_bottom = 191.0
+texture = ExtResource("6_8ethw")
+expand_mode = 1
+
+[node name="stopping" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 636.0
+offset_top = 360.0
+offset_right = 785.0
+offset_bottom = 485.0
+texture = ExtResource("7_np2j2")
+expand_mode = 1
+
+[node name="speed" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 267.0
+offset_top = 355.0
+offset_right = 395.0
+offset_bottom = 491.0
+texture = ExtResource("8_bv0en")
+expand_mode = 1
+
+[node name="restrictive" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 465.0
+offset_top = 65.0
+offset_right = 604.0
+offset_bottom = 191.0
+texture = ExtResource("9_7k2h1")
+expand_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 64.0
+offset_right = 943.0
+offset_bottom = 156.0
+texture = ExtResource("10_gbog7")
+expand_mode = 1
+
+[connection signal="pressed" from="traffic_signs_bg/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="traffic_signs_bg/next" to="." method="_on_next_pressed"]

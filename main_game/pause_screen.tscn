@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctidgle7di3q4"]
+
+[ext_resource type="Texture2D" uid="uid://bn7gs6tjxi7iu" path="res://pause_screen_bg.jpg" id="1_sep58"]
+[ext_resource type="Script" path="res://main_game/pause_screen.gd" id="1_urb0r"]
+[ext_resource type="Texture2D" uid="uid://cdb341o8m8jvv" path="res://button (28).png" id="4_likt0"]
+[ext_resource type="Texture2D" uid="uid://binu3g2whxdaw" path="res://button (33).png" id="5_tg25y"]
+[ext_resource type="Texture2D" uid="uid://cb15n4emhblyi" path="res://button (29).png" id="6_wesut"]
+[ext_resource type="Texture2D" uid="uid://b57fviygnjs42" path="res://button (34).png" id="7_frp8w"]
+[ext_resource type="Texture2D" uid="uid://cnagw638mhrhk" path="res://button (30).png" id="8_plcb7"]
+[ext_resource type="Texture2D" uid="uid://0hw8chp6h37f" path="res://button (31).png" id="9_0vj3c"]
+
+[node name="Pause_Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_urb0r")
+
+[node name="Panel" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1224.0
+offset_bottom = 671.0
+texture = ExtResource("1_sep58")
+expand_mode = 1
+
+[node name="replay" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 177.0
+offset_right = 707.0
+offset_bottom = 253.0
+texture_normal = ExtResource("4_likt0")
+texture_pressed = ExtResource("5_tg25y")
+
+[node name="learn" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 274.0
+offset_right = 700.0
+offset_bottom = 350.0
+texture_normal = ExtResource("6_wesut")
+texture_pressed = ExtResource("7_frp8w")
+
+[node name="quit" type="TextureButton" parent="Panel"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 372.0
+offset_right = 686.0
+offset_bottom = 448.0
+texture_normal = ExtResource("8_plcb7")
+texture_pressed = ExtResource("9_0vj3c")
+
+[connection signal="pressed" from="Panel/replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Panel/learn" to="." method="_on_learn_pressed"]
+[connection signal="pressed" from="Panel/quit" to="." method="_on_quit_pressed"]

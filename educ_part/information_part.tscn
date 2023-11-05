@@ -1,0 +1,102 @@
+[gd_scene load_steps=11 format=3 uid="uid://bqk2qvc4k7k08"]
+
+[ext_resource type="Script" path="res://educ_part/information_part.gd" id="1_gfvdk"]
+[ext_resource type="Texture2D" uid="uid://deid6kmwnguc3" path="res://general.png" id="2_57oxg"]
+[ext_resource type="Texture2D" uid="uid://e3uypgtgj4xs" path="res://info_bg.png" id="2_me116"]
+[ext_resource type="Texture2D" uid="uid://b0gkca7xremk4" path="res://drivers_license.png" id="4_tq7fp"]
+[ext_resource type="Texture2D" uid="uid://b21s6abrdmgwr" path="res://traffic signs.png" id="5_n4o20"]
+[ext_resource type="Texture2D" uid="uid://cbsjkfmd8ea6d" path="res://Pixel Buttons/Previous_Idle.png" id="6_uyobg"]
+[ext_resource type="Texture2D" uid="uid://3buji45wii8j" path="res://Pixel Buttons/Previous_Pushed.png" id="7_tjfxi"]
+[ext_resource type="Texture2D" uid="uid://m1js2ccbksv0" path="res://select.png" id="8_ul3no"]
+[ext_resource type="Texture2D" uid="uid://6fd10dwsqcbp" path="res://select_pressed.png" id="9_aebbt"]
+[ext_resource type="AudioStream" uid="uid://dlqxpoqoql7jl" path="res://elapse-swoop-main-version-24164-01-29.mp3" id="10_4iw00"]
+
+[node name="information_part" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gfvdk")
+
+[node name="info_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -32.0
+offset_right = 1266.0
+offset_bottom = 668.0
+texture = ExtResource("2_me116")
+expand_mode = 1
+
+[node name="general" type="TextureRect" parent="info_bg"]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 94.0
+offset_right = 720.0
+offset_bottom = 364.0
+texture = ExtResource("2_57oxg")
+expand_mode = 1
+
+[node name="drivers_license" type="TextureRect" parent="info_bg"]
+layout_mode = 0
+offset_left = 810.0
+offset_top = 177.0
+offset_right = 1080.0
+offset_bottom = 447.0
+texture = ExtResource("4_tq7fp")
+expand_mode = 1
+
+[node name="traffic_signs" type="TextureRect" parent="info_bg"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 171.0
+offset_right = 346.0
+offset_bottom = 441.0
+texture = ExtResource("5_n4o20")
+expand_mode = 1
+
+[node name="previous" type="TextureButton" parent="info_bg"]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 543.0
+offset_right = 130.0
+offset_bottom = 707.0
+texture_normal = ExtResource("6_uyobg")
+texture_pressed = ExtResource("7_tjfxi")
+
+[node name="driver_select" type="TextureButton" parent="info_bg"]
+layout_mode = 0
+offset_left = 867.0
+offset_top = 462.0
+offset_right = 1026.0
+offset_bottom = 513.0
+texture_normal = ExtResource("8_ul3no")
+texture_pressed = ExtResource("9_aebbt")
+
+[node name="general_select" type="TextureButton" parent="info_bg"]
+layout_mode = 0
+offset_left = 506.0
+offset_top = 382.0
+offset_right = 665.0
+offset_bottom = 433.0
+texture_normal = ExtResource("8_ul3no")
+texture_pressed = ExtResource("9_aebbt")
+
+[node name="traffic_select" type="TextureButton" parent="info_bg"]
+layout_mode = 0
+offset_left = 126.0
+offset_top = 458.0
+offset_right = 285.0
+offset_bottom = 509.0
+texture_normal = ExtResource("8_ul3no")
+texture_pressed = ExtResource("9_aebbt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4iw00")
+
+[connection signal="mouse_entered" from="info_bg/general" to="." method="_on_general_mouse_entered"]
+[connection signal="pressed" from="info_bg/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="info_bg/driver_select" to="." method="_on_driver_select_pressed"]
+[connection signal="pressed" from="info_bg/general_select" to="." method="_on_general_select_pressed"]
+[connection signal="pressed" from="info_bg/traffic_select" to="." method="_on_traffic_select_pressed"]

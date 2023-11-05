@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6imk5brmi0u3"]
+
+[ext_resource type="Script" path="res://main_menu/main_menu.gd" id="1_k65be"]
+[ext_resource type="Texture2D" uid="uid://ca5txcy6nswng" path="res://main_bg.jpg" id="1_me3jg"]
+[ext_resource type="Texture2D" uid="uid://ds6oi6dygcnnn" path="res://button (5).png" id="2_hr50e"]
+[ext_resource type="Texture2D" uid="uid://8brh41ml8gnj" path="res://button (8).png" id="3_vp82o"]
+[ext_resource type="Texture2D" uid="uid://b0a7iga3lqhw8" path="res://button (3).png" id="4_7jtr0"]
+[ext_resource type="Texture2D" uid="uid://cbkt5uoflkk3x" path="res://button (6).png" id="5_vf7oc"]
+[ext_resource type="Texture2D" uid="uid://bgjh0gcw8pue2" path="res://button (4).png" id="7_lps6y"]
+[ext_resource type="Texture2D" uid="uid://bhq5ca8h0aovb" path="res://button (7).png" id="8_flwpb"]
+[ext_resource type="Texture2D" uid="uid://cqoqu57xucht" path="res://season.png" id="9_70qdk"]
+[ext_resource type="Texture2D" uid="uid://dx42hb85b4jhg" path="res://trip.png" id="10_kyhjr"]
+[ext_resource type="AudioStream" uid="uid://vh6r3xk2w5ws" path="res://former-102685.mp3" id="11_ikx8s"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1280.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k65be")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1277.0
+offset_bottom = 720.0
+texture = ExtResource("1_me3jg")
+expand_mode = 1
+
+[node name="Trip" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 268.0
+offset_right = 746.0
+offset_bottom = 326.0
+texture = ExtResource("10_kyhjr")
+expand_mode = 1
+
+[node name="Season" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 286.0
+offset_top = 112.0
+offset_right = 998.0
+offset_bottom = 262.0
+texture = ExtResource("9_70qdk")
+expand_mode = 1
+
+[node name="Quit" type="TextureButton" parent="TextureRect"]
+layout_mode = 2
+offset_left = 782.0
+offset_top = 400.0
+offset_right = 904.0
+offset_bottom = 453.0
+texture_normal = ExtResource("2_hr50e")
+texture_pressed = ExtResource("3_vp82o")
+
+[node name="Start" type="TextureButton" parent="TextureRect"]
+layout_mode = 2
+offset_left = 390.0
+offset_top = 401.0
+offset_right = 529.0
+offset_bottom = 454.0
+tooltip_text = "This will direct you to the main game"
+texture_normal = ExtResource("4_7jtr0")
+texture_pressed = ExtResource("5_vf7oc")
+
+[node name="Learn" type="TextureButton" parent="TextureRect"]
+layout_mode = 2
+offset_left = 572.0
+offset_top = 400.0
+offset_right = 721.0
+offset_bottom = 453.0
+tooltip_text = "This will direct you to learn something about driving"
+texture_normal = ExtResource("7_lps6y")
+texture_pressed = ExtResource("8_flwpb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_ikx8s")
+volume_db = 9.564
+autoplay = true
+
+[connection signal="pressed" from="TextureRect/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="TextureRect/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="TextureRect/Learn" to="." method="_on_learn_pressed"]

@@ -1,0 +1,319 @@
+[gd_scene load_steps=7 format=3 uid="uid://cnc7cdkef3ror"]
+
+[ext_resource type="Texture2D" uid="uid://b2sc255lhxv6o" path="res://general_section_bg.png" id="1_jdy6x"]
+[ext_resource type="Script" path="res://educ_part/general_section.gd" id="1_nqibt"]
+[ext_resource type="Texture2D" uid="uid://cbsjkfmd8ea6d" path="res://Pixel Buttons/Previous_Idle.png" id="2_5afmf"]
+[ext_resource type="Texture2D" uid="uid://3buji45wii8j" path="res://Pixel Buttons/Previous_Pushed.png" id="3_aurnp"]
+[ext_resource type="Texture2D" uid="uid://bugqqb4rewsca" path="res://Pixel Buttons/Next_Idle.png" id="4_yvkwn"]
+[ext_resource type="Texture2D" uid="uid://bkur2w1rs0b5e" path="res://Pixel Buttons/Next_Pushed.png" id="5_gsny8"]
+
+[node name="general_section" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nqibt")
+
+[node name="general_bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1270.0
+offset_bottom = 714.0
+texture = ExtResource("1_jdy6x")
+expand_mode = 1
+
+[node name="previous" type="TextureButton" parent="general_bg"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.05
+anchor_bottom = 0.134
+offset_left = 26.0
+offset_top = 530.0
+offset_right = 78.5
+offset_bottom = 690.324
+texture_normal = ExtResource("2_5afmf")
+texture_pressed = ExtResource("3_aurnp")
+
+[node name="next" type="TextureButton" parent="general_bg"]
+layout_mode = 0
+offset_left = 1008.0
+offset_top = 528.0
+offset_right = 1072.0
+offset_bottom = 680.0
+texture_normal = ExtResource("4_yvkwn")
+texture_pressed = ExtResource("5_gsny8")
+
+[node name="safety_belt" type="Label" parent="general_bg"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 42.0
+offset_right = 400.0
+offset_bottom = 68.0
+text = "Safety Belt Usage"
+
+[node name="Label" type="Label" parent="general_bg/safety_belt"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = 44.0
+offset_right = 207.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Every trip is safer when you buckle up. It saves lives and reduce crash injuries."
+justification_flags = 161
+text_overrun_behavior = 1
+max_lines_visible = 1
+visible_characters = 42
+visible_ratio = 0.522
+
+[node name="Label2" type="Label" parent="general_bg/safety_belt"]
+layout_mode = 0
+offset_left = -86.0
+offset_top = 62.0
+offset_right = 243.0
+offset_bottom = 88.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "up. It saves lives and reduce crash "
+
+[node name="Label3" type="Label" parent="general_bg/safety_belt"]
+layout_mode = 0
+offset_left = -85.0
+offset_top = 78.0
+offset_right = 244.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "injuries."
+
+[node name="speed_limits" type="Label" parent="general_bg"]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 219.0
+offset_right = 388.0
+offset_bottom = 245.0
+text = "Speed Limits"
+
+[node name="Label5" type="Label" parent="general_bg/speed_limits"]
+layout_mode = 0
+offset_left = -112.0
+offset_top = 102.0
+offset_right = 1114.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "traffic congestion, and air pollution, "
+
+[node name="Label4" type="Label" parent="general_bg/speed_limits"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = 86.0
+offset_right = 1116.0
+offset_bottom = 112.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "promote responsible behavior, reduce "
+
+[node name="Label3" type="Label" parent="general_bg/speed_limits"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = 73.0
+offset_right = 1120.0
+offset_bottom = 99.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "and weather condition but it also "
+
+[node name="Label" type="Label" parent="general_bg/speed_limits"]
+layout_mode = 0
+offset_left = -108.0
+offset_top = 41.0
+offset_right = 1118.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "You can be limitless but not in driving."
+
+[node name="Label2" type="Label" parent="general_bg/speed_limits"]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 58.0
+offset_right = 1125.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "It does not only adjust to road "
+
+[node name="Label6" type="Label" parent="general_bg/speed_limits"]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 118.0
+offset_right = 1119.0
+offset_bottom = 144.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "as well as accidents. "
+
+[node name="alcohol_drugs" type="Label" parent="general_bg"]
+layout_mode = 0
+offset_left = 262.0
+offset_top = 396.0
+offset_right = 403.0
+offset_bottom = 422.0
+text = "Alcohol and Drugs
+"
+
+[node name="Label6" type="Label" parent="general_bg/alcohol_drugs"]
+layout_mode = 0
+offset_left = -81.0
+offset_top = 66.0
+offset_right = 1145.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "influence of sound  mind, not alcohol "
+
+[node name="Label7" type="Label" parent="general_bg/alcohol_drugs"]
+layout_mode = 0
+offset_left = -82.0
+offset_top = 46.0
+offset_right = 1144.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Don’t drive insanely. Be under the "
+
+[node name="Label8" type="Label" parent="general_bg/alcohol_drugs"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = 81.0
+offset_right = 1143.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "and drugs."
+
+[node name="distraction_free" type="Label" parent="general_bg"]
+layout_mode = 0
+offset_left = 685.0
+offset_top = 44.0
+offset_right = 869.0
+offset_bottom = 70.0
+text = "Distraction-Free Driving
+"
+
+[node name="Label6" type="Label" parent="general_bg/distraction_free"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 40.0
+offset_right = 1151.0
+offset_bottom = 66.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "There’s always a time  for everything. "
+
+[node name="Label7" type="Label" parent="general_bg/distraction_free"]
+layout_mode = 0
+offset_left = -68.0
+offset_top = 75.0
+offset_right = 1158.0
+offset_bottom = 101.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Avoid texting, playing games, watching "
+
+[node name="Label8" type="Label" parent="general_bg/distraction_free"]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 57.0
+offset_right = 1150.0
+offset_bottom = 83.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " You can multitask but not during driving."
+
+[node name="Label9" type="Label" parent="general_bg/distraction_free"]
+layout_mode = 0
+offset_left = -71.0
+offset_top = 91.0
+offset_right = 1155.0
+offset_bottom = 117.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "movies, and other mobile activities.  "
+
+[node name="Label10" type="Label" parent="general_bg/distraction_free"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = 108.0
+offset_right = 1151.0
+offset_bottom = 134.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Focus on reaching your destination.  "
+
+[node name="defensive_driving" type="Label" parent="general_bg"]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 216.0
+offset_right = 837.0
+offset_bottom = 242.0
+text = "Defensive Driving"
+
+[node name="Label7" type="Label" parent="general_bg/defensive_driving"]
+layout_mode = 0
+offset_left = -89.0
+offset_top = 68.0
+offset_right = 1137.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = " other drivers’ actions. "
+
+[node name="Label8" type="Label" parent="general_bg/defensive_driving"]
+layout_mode = 0
+offset_left = -87.0
+offset_top = 49.0
+offset_right = 1139.0
+offset_bottom = 75.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Be aware, alert and proactive towards"
+
+[node name="right_way" type="Label" parent="general_bg"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 390.0
+offset_right = 821.0
+offset_bottom = 416.0
+text = "Right of Way"
+
+[node name="Label6" type="Label" parent="general_bg/right_way"]
+layout_mode = 0
+offset_left = -106.0
+offset_top = 55.0
+offset_right = 1323.0
+offset_bottom = 81.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Understand the rules pertaining to the "
+
+[node name="Label7" type="Label" parent="general_bg/right_way"]
+layout_mode = 0
+offset_left = -107.0
+offset_top = 69.0
+offset_right = 1119.0
+offset_bottom = 95.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "right-of-way and yield when it's "
+
+[node name="Label8" type="Label" parent="general_bg/right_way"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = 85.0
+offset_right = 1116.0
+offset_bottom = 111.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "appropriate, such as when you're about "
+
+[node name="Label9" type="Label" parent="general_bg/right_way"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = 102.0
+offset_right = 1116.0
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "to reach an intersection. Not giving the "
+
+[node name="Label10" type="Label" parent="general_bg/right_way"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = 117.0
+offset_right = 1116.0
+offset_bottom = 143.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "right of way can lead to collisions.     "
+
+[connection signal="pressed" from="general_bg/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="general_bg/next" to="." method="_on_next_pressed"]
