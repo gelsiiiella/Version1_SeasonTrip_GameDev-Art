@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0wstbrypv2lg"]
+
+[ext_resource type="Texture2D" uid="uid://ddnllsvkbxqg4" path="res://textures/road_right.png" id="1_sfq0g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ui63"]
+albedo_texture = ExtResource("1_sfq0g")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_821wv"]
+size = Vector2(30, 30)
+
+[node name="road_rturn_0" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_6ui63")
+mesh = SubResource("PlaneMesh_821wv")

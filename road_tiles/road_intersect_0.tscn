@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcuvjbowbmsbv"]
+
+[ext_resource type="Texture2D" uid="uid://dw47yq8iedddt" path="res://textures/intersection.png" id="1_ml4me"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqofp"]
+albedo_texture = ExtResource("1_ml4me")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f55eg"]
+size = Vector2(30, 30)
+
+[node name="road_intersect_0" type="MeshInstance3D"]
+material_override = SubResource("StandardMaterial3D_rqofp")
+mesh = SubResource("PlaneMesh_f55eg")
