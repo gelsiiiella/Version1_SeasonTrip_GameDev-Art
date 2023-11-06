@@ -1,0 +1,188 @@
+[gd_scene load_steps=18 format=3 uid="uid://ddc5gpxod2j4"]
+
+[ext_resource type="Script" path="res://main_game/World.gd" id="1_7axet"]
+[ext_resource type="MeshLibrary" uid="uid://d3dmh8yvjgt4i" path="res://Drive_Bg/Meshlibrary/Buildings.tres" id="2_60d1p"]
+[ext_resource type="MeshLibrary" uid="uid://b1a36nlbes8jm" path="res://Drive_Bg/Meshlibrary/Roads.tres" id="2_yc70w"]
+[ext_resource type="PackedScene" uid="uid://c8hx5t3o022ng" path="res://road_generator.tscn" id="2_yho0j"]
+[ext_resource type="Script" path="res://main_game/Buildings.gd" id="3_1b5u5"]
+[ext_resource type="Script" path="res://main_game/Control.gd" id="4_d8ave"]
+[ext_resource type="FontFile" uid="uid://fjgdn06ebj4c" path="res://CarLock-lawX.ttf" id="5_harwm"]
+[ext_resource type="PackedScene" uid="uid://djxwuwtpo3teh" path="res://main_game/car_move.tscn" id="5_uy6u3"]
+[ext_resource type="Script" path="res://main_game/HeartPy.gd" id="6_8v0n0"]
+[ext_resource type="FontFile" uid="uid://c2o5wpeidrwo0" path="res://RoadSummerItalic-K71dW.ttf" id="8_804de"]
+[ext_resource type="Script" path="res://main_game/PauseButton.gd" id="11_i8qcj"]
+[ext_resource type="Texture2D" uid="uid://bh33347nim1nh" path="res://pause_idle.png" id="11_vwx3b"]
+[ext_resource type="Texture2D" uid="uid://boh7bwgwow8tm" path="res://pause_pushed.png" id="12_jj4o6"]
+[ext_resource type="AudioStream" uid="uid://b2nwrkw3hf841" path="res://floating-cat-michael-grubb-main-version-24551-01-53.mp3" id="13_2kkd0"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_eqtf7"]
+
+[sub_resource type="Sky" id="Sky_n6c4v"]
+sky_material = SubResource("ProceduralSkyMaterial_eqtf7")
+
+[sub_resource type="Environment" id="Environment_swmfc"]
+background_mode = 2
+sky = SubResource("Sky_n6c4v")
+
+[node name="MainGame" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.473111, 0.907378, -0.306388)
+script = ExtResource("1_7axet")
+
+[node name="Sky" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_swmfc")
+
+[node name="Buildings" type="GridMap" parent="Sky"]
+transform = Transform3D(1, 0, 9.31323e-10, 2.32831e-10, 1, 2.98023e-08, 9.31323e-10, 0, 1, 20.5959, -111.752, 24.0133)
+mesh_library = ExtResource("2_60d1p")
+cell_scale = 700.0
+data = {
+"cells": PackedInt32Array(65179, 64527, 1441838, 65178, 64819, 1441834, 65176, 65229, 1441831, 358, 65154, 1048587, 414, 64530, 1048611, 330, 63857, 7, 634, 63864, 44, 64929, 63623, 6, 64925, 63913, 0, 65402, 63266, 1048617, 65403, 62986, 1048617, 65404, 62707, 1048617)
+}
+script = ExtResource("3_1b5u5")
+
+[node name="Lights and blocks" type="GridMap" parent="Sky/Buildings"]
+mesh_library = ExtResource("2_yc70w")
+cell_scale = 650.0
+data = {
+"cells": PackedInt32Array(392489, 64010, 6, 720675, 64996, 4, 720699, 64968, 4, 720713, 65000, 4, 720591, 64992, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 10, 0)
+
+[node name="GridMap" type="GridMap" parent="Sky/Buildings"]
+transform = Transform3D(1, 0, 0, 8.27181e-24, 1, 0, 0, 0, 1, 6.10352e-05, 9.81471, 23.0168)
+mesh_library = ExtResource("2_60d1p")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.502009, 0.864863, 0, -0.864863, 0.502009, 0.518971, 329.202, 13.6121)
+
+[node name="road_generator" parent="." instance=ExtResource("2_yho0j")]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+
+[node name="Car" parent="." instance=ExtResource("5_uy6u3")]
+transform = Transform3D(-0.00897098, -1.02737e-08, 0.99996, -0.290406, 0.956901, -0.00260532, -0.956861, -0.290419, -0.00858434, 54.8087, 162.749, 17.1378)
+inertia = Vector3(363.64, 261.36, 420.45)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_d8ave")
+
+[node name="Distance" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 318.0
+offset_top = 15.0
+offset_right = 555.0
+offset_bottom = 60.0
+theme_override_colors/font_color = Color(0.984314, 0.603922, 0.211765, 1)
+theme_override_fonts/font = ExtResource("8_804de")
+theme_override_font_sizes/font_size = 30
+text = "Distance
+"
+
+[node name="DistanceValue" type="Label" parent="Control/Distance"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 7.0
+offset_right = 313.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("5_harwm")
+theme_override_font_sizes/font_size = 25
+
+[node name="Speed" type="Label" parent="Control"]
+layout_mode = 2
+offset_left = 36.0
+offset_top = 15.0
+offset_right = 273.0
+offset_bottom = 60.0
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.541176, 0, 0.972549, 1)
+theme_override_fonts/font = ExtResource("8_804de")
+theme_override_font_sizes/font_size = 30
+text = "Speed"
+
+[node name="SpeedValue" type="Label" parent="Control/Speed"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 6.0
+offset_right = 352.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("5_harwm")
+theme_override_font_sizes/font_size = 25
+
+[node name="Timer" type="Timer" parent="Control"]
+
+[node name="Button" type="TextureButton" parent="Control"]
+layout_mode = 0
+offset_left = 1044.0
+offset_top = 3.0
+offset_right = 1108.0
+offset_bottom = 67.0
+action_mode = 0
+button_mask = 0
+
+[node name="HeartPy" type="Node" parent="."]
+script = ExtResource("6_8v0n0")
+
+[node name="Heart" type="Label" parent="HeartPy"]
+offset_left = 638.0
+offset_top = 18.0
+offset_right = 817.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0.717647, 0.219608, 0.301961, 0.984314)
+theme_override_fonts/font = ExtResource("8_804de")
+theme_override_font_sizes/font_size = 30
+text = "Heart Rate
+"
+
+[node name="HeartValue" type="Label" parent="HeartPy/Heart"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.562
+anchor_top = 0.633
+anchor_right = 1.562
+anchor_bottom = 1.0
+offset_left = -78.598
+offset_top = -22.485
+offset_right = 163.402
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("5_harwm")
+theme_override_font_sizes/font_size = 25
+
+[node name="Timer" type="Timer" parent="HeartPy"]
+
+[node name="Node" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("11_i8qcj")
+
+[node name="pause" type="TextureButton" parent="Node"]
+layout_mode = 0
+offset_left = 1004.0
+offset_top = 3.0
+offset_right = 1068.0
+offset_bottom = 67.0
+texture_normal = ExtResource("11_vwx3b")
+texture_pressed = ExtResource("12_jj4o6")
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+transparent_bg = true
+mode = 2
+title = "WELCOME TO SEASON TRIP"
+initial_position = 1
+size = Vector2i(803, 100)
+visible = true
+content_scale_mode = 1
+item_count = 3
+item_0/text = "Start your smooth driving journey with Season Trip!"
+item_0/id = 0
+item_1/text = "Press arrow left to turn the vehicle to the left and arrow right to turn it to the right"
+item_1/id = 1
+item_2/text = "HAPPY DRIVING !!!"
+item_2/id = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_2kkd0")
+autoplay = true
+
+[connection signal="speed_changed" from="Control" to="road_generator" method="_on_control_speed_changed"]
+[connection signal="pressed" from="Node/pause" to="Node" method="_on_pause_pressed"]
